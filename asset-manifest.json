@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bot-battlr-code-challenge/static/css/main.281c222f.css",
+    "main.js": "/bot-battlr-code-challenge/static/js/main.d4a5a525.js",
+    "static/js/453.ec115165.chunk.js": "/bot-battlr-code-challenge/static/js/453.ec115165.chunk.js",
+    "index.html": "/bot-battlr-code-challenge/index.html",
+    "main.281c222f.css.map": "/bot-battlr-code-challenge/static/css/main.281c222f.css.map",
+    "main.d4a5a525.js.map": "/bot-battlr-code-challenge/static/js/main.d4a5a525.js.map",
+    "453.ec115165.chunk.js.map": "/bot-battlr-code-challenge/static/js/453.ec115165.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.281c222f.css",
+    "static/js/main.d4a5a525.js"
+  ]
+}
