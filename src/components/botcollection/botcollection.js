@@ -13,7 +13,7 @@ function Botcolletion({
     return (
       <li className="botLi" key={"bot" + index}>
         <NavLink
-          to="/botspecs"
+          to="/bot-battlr-code-challenge/botspecs"
           className="LinkCollection"
           onClick={() => {
             setBotspecsShown(bot);

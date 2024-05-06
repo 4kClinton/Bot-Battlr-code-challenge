@@ -1,7 +1,7 @@
-import React from "react";
 import { Link as NavLink } from "react-router-dom";
 
 function BotSpecs({ botSpecsShown, armyBots, setArmyBots }) {
+  console.log(botSpecsShown);
   return (
     <div className="specDiv">
       <img
@@ -36,14 +36,15 @@ function BotSpecs({ botSpecsShown, armyBots, setArmyBots }) {
 
       <div className="btnSpec">
         <button>
-          <NavLink className="navSpec btnSpec" to="/">
+          <NavLink className="navSpec btnSpec" to="/bot-battlr-code-challenge">
             Go Back
           </NavLink>
         </button>
         <br></br>
         <br />
         <button>
-          <NavLink to="/" className="navSpec btnSpec" onClick={() => {
+          <NavLink to="/bot-battlr-code-challenge"
+           className="navSpec btnSpec" onClick={() => {
             const alreadyInBot = armyBots.includes(botSpecsShown);
 
             if (alreadyInBot) {

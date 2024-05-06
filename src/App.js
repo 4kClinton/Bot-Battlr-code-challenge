@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import BrowserRouter
+import { Routes, Route } from "react-router-dom";
 import Botcolletion from "./components/botcollection/botcollection";
 import Yourbotarmy from "./components/yourbotarmy/yourbotarmy";
-import BotSpecs from "./components/botspecs/Botspecs";
+import BotSpecs from "./components/botspecs/Botspecs.js";
 
 function App() {
   const [botcolletion, setBotcolletion] = useState([]);
@@ -11,46 +11,44 @@ function App() {
   const [botSpecsShown, setBotspecsShown] = useState({});
 
   useEffect(() => {
-    fetch("https://sammy-ck.github.io/db.json")
+    fetch("https://json-server-2-4qi6.onrender.com/bots")
       .then((resp) => resp.json())
       .then((data) => {
-        setBotcolletion(data.bots);
+        setBotcolletion(data);
       });
   }, []);
 
   return (
-    <Router> {/* Wrap Routes in Router */}
-      <div className="App">
-        <header>Bot Battlr</header>
-        <Yourbotarmy armyBots={armyBots} setArmyBots={setArmyBots} />
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Botcolletion
-                setBotspecsShown={setBotspecsShown}
-                setArmyBots={setArmyBots}
-                armyBots={armyBots}
-                botcolletion={botcolletion}
-                setBotcolletion={setBotcolletion}
-              />
-            }
-          />
-          <Route
-            exact
-            path="/botspecs"
-            element={
-              <BotSpecs
-                botSpecsShown={botSpecsShown}
-                setArmyBots={setArmyBots}
-                armyBots={armyBots}
-              />
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <header>Bot Battlr</header>
+      <Yourbotarmy armyBots={armyBots} setArmyBots={setArmyBots} />
+      <Routes>
+        <Route
+        
+          path="/bot-battlr-code-challenge"
+          element={
+            <Botcolletion
+              setBotspecsShown={setBotspecsShown}
+              setArmyBots={setArmyBots}
+              armyBots={armyBots}
+              botcolletion={botcolletion}
+              setBotcolletion={setBotcolletion}
+            />
+          }
+        />
+        <Route
+    
+          path="/bot-battlr-code-challenge/botspecs"
+          element={
+            <BotSpecs
+              botSpecsShown={botSpecsShown}
+              setArmyBots={setArmyBots}
+              armyBots={armyBots}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
